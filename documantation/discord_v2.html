@@ -240,6 +240,240 @@
       <div class="param"><code>message</code> : <em>str</em></div>
     </div>
 
+<div class="function">
+  <h3><code>SetPermAdministrator(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Active ou désactive la permission <code>Administrateur</code> pour un rôle donné dans le serveur (donne tous les droits).</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+  <div class="param"><code>role_name</code> : <em>str</em> — Nom du rôle</div>
+  <div class="param"><code>value</code> : <em>bool</em> — <code>True</code> (active) ou <code>False</code> (désactive)</div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermViewAuditLog(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de voir les logs d’audit du serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermBanMembers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de bannir des membres du serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermKickMembers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’expulser (kick) des membres du serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageRoles(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de gérer/modifier les rôles du serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageChannels(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de créer, modifier ou supprimer les salons du serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageWebhooks(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de gérer les Webhooks.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageEmojisAndStickers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de gérer les emojis et stickers personnalisés.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageEvents(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de gérer les événements du serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageThreads(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de gérer les threads (sous-conversations) sur le serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermManageMessages(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de supprimer ou épingler les messages d’autres membres.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermMuteMembers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de réduire au silence les membres dans les salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermDeafenMembers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de rendre sourds des membres dans les salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermMoveMembers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de déplacer des membres entre les salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermPrioritySpeaker(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’utiliser la priorité de parole dans les salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermStream(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de diffuser en direct (Go Live) dans les salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermSendMessages(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’envoyer des messages dans les salons textuels.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermSendTTSMessages(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’envoyer des messages text-to-speech (TTS).</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermAddReactions(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’ajouter des réactions aux messages.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermAttachFiles(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de joindre des fichiers aux messages.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermEmbedLinks(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’intégrer des liens dans les messages.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermMentionEveryone(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de mentionner <code>@everyone</code> et <code>@here</code>.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermUseExternalEmojis(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’utiliser des emojis externes sur le serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermUseExternalStickers(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle d’utiliser des stickers externes sur le serveur.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermConnect(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de rejoindre des salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
+<div class="function">
+  <h3><code>SetPermSpeak(guild_id: int, role_name: str, value: bool)</code></h3>
+  <p>Permet à un rôle de parler dans les salons vocaux.</p>
+  <p><strong>Paramètres :</strong></p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>role_name</code> : <em>str</em></div>
+  <div class="param"><code>value</code> : <em>bool</em></div>
+</div>
+
     <div class="function">
       <h3><code>leave()</code></h3>
       <p>Arrête le client Discord proprement.</p>
