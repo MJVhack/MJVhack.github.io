@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation pour discord_modif.py</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #615757;
+      color: #f9f6e5;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .function {
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #c9d5e8;
+      padding-left: 1rem;
+      background: #f9fbfd;
+      border-radius: 5px;
+    }
+    .param {
+      margin-left: 1.5rem;
+      font-size: 0.96em;
+    }
+    ul {
+      margin-left: 1.5rem;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: right;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Documentation - Librairie <code>discord_modif.py</code></h1>
+
+  <div class="section">
+    <h2>🔧 Introduction</h2>
+    <p>
+      Le module <code>discord_modif</code> fournit des outils pour interagir avec l'API de Discord via un client <code>discord.py</code>.<br>
+      Il encapsule la logique asynchrone dans une interface simple, utilisable sans async/await dans votre <code>main.py</code>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>🚀 Démarrage</h2>
+    <p>
+      <b>Conseil :</b> placez votre <code>main.py</code> dans le dossier parent de <code>discord_modif.py</code>.<br>
+      Importez simplement avec&nbsp;:
+    </p>
+    <pre>from [dossier parent] import discord_modif as dm</pre>
+    <p>
+      Placez un fichier <code>token.txt</code> à côté de votre <code>main.py</code> contenant le token de votre bot.
+    </p>
+    <p>
+      Démarrez le bot avec&nbsp;:
+      <pre>dm.start()</pre>
+      Sans cet appel, rien ne fonctionnera ! Il utilisera <code>token.txt</code> pour se connecter.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>📚 Fonctions disponibles</h2>
+
+    <div class="function">
+      <h3><code>start()</code></h3>
+      <p>Démarre le bot Discord dans un thread séparé. À appeler avant toute autre fonction.</p>
+    </div>
+
+    <div class="function">
+      <h3><code>QuitServer(server_id: int)</code></h3>
+      <p>Fait quitter au bot un serveur donné.</p>
+      <p><b>Paramètres&nbsp;:</b></p>
+      <div class="param"><code>server_id</code> : <em>int</em> — ID du serveur à quitter.</div>
+    </div>
+
+    <div class="function">
+      <h3><code>list(guild_id: int)</code></h3>
+      <p>Liste tous les salons présents dans un serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur ciblé</div>
+    </div>
+
+    <div class="function">
+      <h3><code>CreateCategory(guild_id: int, name: str, visibility: str = "Public")</code></h3>
+      <p>Crée une catégorie dans le serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+      <div class="param"><code>name</code> : <em>str</em> — Nom de la catégorie</div>
+      <div class="param"><code>visibility</code> : <em>str</em> — <code>"Public"</code> ou <code>"Private"</code></div>
+    </div>
+
+    <div class="function">
+      <h3><code>CreateTextChannel(guild_id: int, name: str, category_name: str = None, visibility: str = "Public")</code></h3>
+      <p>Crée un salon textuel dans une catégorie donnée, ou à la racine si <code>category_name</code> est omis.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+      <div class="param"><code>name</code> : <em>str</em> — Nom du salon</div>
+      <div class="param"><code>category_name</code> : <em>str</em> — Nom de la catégorie (optionnel)</div>
+      <div class="param"><code>visibility</code> : <em>str</em> — <code>"Public"</code> ou <code>"Private"</code></div>
+    </div>
+
+    <div class="function">
+      <h3><code>CreateVocalChannel(guild_id: int, name: str, category_name: str = None, visibility: str = "Public")</code></h3>
+      <p>Crée un salon vocal dans une catégorie donnée, ou à la racine si <code>category_name</code> est omis.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+      <div class="param"><code>name</code> : <em>str</em> — Nom du salon vocal</div>
+      <div class="param"><code>category_name</code> : <em>str</em> — Nom de la catégorie (optionnel)</div>
+      <div class="param"><code>visibility</code> : <em>str</em> — <code>"Public"</code> ou <code>"Private"</code></div>
+    </div>
+
+    <div class="function">
+      <h3><code>RenameChannel(guild_id: int, old_name: str, new_name: str)</code></h3>
+      <p>Renomme un salon (textuel, vocal ou catégorie) dans le serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+      <div class="param"><code>old_name</code> : <em>str</em> — Nom actuel du salon</div>
+      <div class="param"><code>new_name</code> : <em>str</em> — Nouveau nom à donner</div>
+    </div>
+
+    <div class="function">
+      <h3><code>delete(guild_id: int, names)</code></h3>
+      <p>Supprime un ou plusieurs salons/catégories/roles par nom.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+      <div class="param"><code>names</code> : <em>str | list[str]</em> — Nom du salon/catégorie/role ou liste de noms</div>
+    </div>
+
+    <div class="function">
+      <h3><code>delete_all(guild_id: int)</code></h3>
+      <p>Supprime tous les salons et tous les rôles (sauf <code>@everyone</code>) du serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+    </div>
+
+    <div class="function">
+      <h3><code>RenameServer(guild_id: int, new_name: str)</code></h3>
+      <p>Renomme le serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>new_name</code> : <em>str</em></div>
+    </div>
+
+    <div class="function">
+      <h3><code>check(guild_id: int, log=True)</code></h3>
+      <p>Détecte les comptes suspects et enregistre un rapport <code>logs/suspects_...</code>.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>log</code> : <em>bool</em> — Active l’écriture du fichier log</div>
+    </div>
+
+    <div class="function">
+      <h3><code>warn(guild_id: int, member_id: int, reason="Comportement inapproprié.")</code></h3>
+      <p>Envoie un avertissement par message privé à un membre.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>member_id</code> : <em>int</em></div>
+      <div class="param"><code>reason</code> : <em>str</em> — Message d’avertissement</div>
+    </div>
+
+    <div class="function">
+      <h3><code>ban(guild_id: int, member_id: int, reason="Violation du règlement.")</code></h3>
+      <p>Bannit un membre du serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>member_id</code> : <em>int</em></div>
+      <div class="param"><code>reason</code> : <em>str</em> — Message de bannissement</div>
+    </div>
+
+    <div class="function">
+      <h3><code>kick(guild_id: int, member_id: int, reason="Comportement inacceptable.")</code></h3>
+      <p>Expulse un membre du serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>member_id</code> : <em>int</em></div>
+      <div class="param"><code>reason</code> : <em>str</em> — Message d’expulsion</div>
+    </div>
+
+    <div class="function">
+      <h3><code>mute(guild_id: int, member_id: int, reason="Silence temporaire", duration=None)</code></h3>
+      <p>Réduit un membre au silence (mute) sur le serveur, temporairement ou non.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>member_id</code> : <em>int</em></div>
+      <div class="param"><code>reason</code> : <em>str</em></div>
+      <div class="param"><code>duration</code> : <em>int</em> — Durée en secondes (None = permanent)</div>
+    </div>
+
+    <div class="function">
+      <h3><code>PrepareCommunity(guild_id: int)</code></h3>
+      <p>Prépare le serveur à être une communauté officielle (création de salons, notifie les membres, modifie la sécurité).</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+    </div>
+
+    <div class="function">
+      <h3><code>CreateRole(guild_id: int, name: str, color="default", separate=False, admin=False, ban=False, kick=False, mute=False)</code></h3>
+      <p>Crée un rôle avec permissions personnalisées.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>name</code> : <em>str</em></div>
+      <div class="param"><code>color</code> : <em>str</em> — <code>blue</code>, <code>red</code>…</div>
+      <div class="param"><code>separate</code> : <em>bool</em></div>
+      <div class="param"><code>admin</code> : <em>bool</em></div>
+      <div class="param"><code>ban</code>, <code>kick</code>, <code>mute</code> : <em>bool</em></div>
+    </div>
+
+    <div class="function">
+      <h3><code>send(guild_id: int, channel_name: str, message: str)</code></h3>
+      <p>Envoie un message dans un salon textuel du serveur.</p>
+      <div class="param"><code>guild_id</code> : <em>int</em></div>
+      <div class="param"><code>channel_name</code> : <em>str</em></div>
+      <div class="param"><code>message</code> : <em>str</em></div>
+    </div>
+
+    <div class="function">
+      <h3><code>leave()</code></h3>
+      <p>Arrête le client Discord proprement.</p>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <h2>📌 Notes</h2>
+    <ul>
+      <li>Le module utilise <code>discord.Client</code> avec les intents nécessaires.</li>
+      <li>Les fonctions sont synchrones pour l'utilisateur mais gèrent l'asynchrone en interne.</li>
+      <li>Vérifiez que le bot est bien connecté avant d’utiliser des fonctions comme <code>QuitServer</code>, <code>send</code>, etc.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p style="font-size: 0.9em; color: #888;">© 2025 - Documentation de la librairie "discord.py_v2".</p>
+  </footer>
+
+</body>
+</html>
