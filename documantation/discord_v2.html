@@ -479,6 +479,40 @@
       <p>Arrête le client Discord proprement.</p>
     </div>
 
+<!-- À insérer dans la section <div class="section"> ... </div> des fonctions disponibles -->
+
+<div class="function">
+  <h3><code>GenerateWebhook(guild_id: int, channel_name: str, name: str = "ModWebhook")</code></h3>
+  <p>Crée un <strong>webhook</strong> dans un salon textuel du serveur. Utile pour automatiser l’envoi de messages via une URL spéciale.</p>
+  <div class="param"><code>guild_id</code> : <em>int</em> — ID du serveur</div>
+  <div class="param"><code>channel_name</code> : <em>str</em> — Nom du salon textuel</div>
+  <div class="param"><code>name</code> : <em>str</em> — Nom du webhook (défaut : "ModWebhook")</div>
+</div>
+
+<div class="function">
+  <h3><code>DeleteWebhook(guild_id: int, channel_name: str, name: str = None)</code></h3>
+  <p>Supprime un ou plusieurs webhooks dans un salon textuel. Si <code>name</code> est omis, tous les webhooks du salon sont supprimés.</p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>channel_name</code> : <em>str</em></div>
+  <div class="param"><code>name</code> : <em>str</em> — Nom du webhook à supprimer (optionnel)</div>
+</div>
+
+<div class="function">
+  <h3><code>CreateInviteLink(guild_id: int, channel_name: str, reason: str = "Invitation automatique")</code></h3>
+  <p>Crée un <strong>lien d’invitation</strong> permanent pour un salon textuel du serveur.</p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>channel_name</code> : <em>str</em></div>
+  <div class="param"><code>reason</code> : <em>str</em> — Motif de l’invitation (optionnel)</div>
+</div>
+
+<div class="function">
+  <h3><code>DeleteInviteLink(guild_id: int, channel_name: str, created_by: str = None)</code></h3>
+  <p>Supprime les liens d’invitation d’un salon texte. Si <code>created_by</code> est précisé, seuls les liens créés par cet utilisateur seront supprimés.</p>
+  <div class="param"><code>guild_id</code> : <em>int</em></div>
+  <div class="param"><code>channel_name</code> : <em>str</em></div>
+  <div class="param"><code>created_by</code> : <em>str</em> — Nom de l’utilisateur ayant créé le lien (optionnel)</div>
+</div>
+
   </div>
 
   <div class="section">
