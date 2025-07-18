@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>dkprun – Documentation</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; background: #f7f9fa; color: #222; margin: 0; padding: 0; }
+    header { background: #222; color: #fff; padding: 2rem 2rem 1rem 2rem; }
+    h1 { margin-top: 0; }
+    nav { background: #333; color: #fff; padding: 0.5rem 2rem; }
+    nav a { color: #fff; margin-right: 2em; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { max-width: 900px; margin: 2rem auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; }
+    section { margin-bottom: 2.5em; }
+    pre, code { background: #f2f2f2; color: #333; border-radius: 4px; padding: 2px 4px; }
+    pre { padding: 1em; overflow-x: auto; }
+    .cmd { background: #222; color: #b0ffb0; padding: 3px 8px; border-radius: 3px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; }
+    th { background: #f2f2f2; }
+    .warn { color: #b71c1c; font-weight: bold; }
+    .ok { color: #006400; }
+    @media (max-width: 700px) {
+      main { padding: 1em; }
+      nav { padding: 0.5em 1em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>dkprun – Documentation</h1>
+    <p>
+      <strong>dkprun</strong> est un utilitaire universel en Python pour exécuter, tester, analyser, préparer, automatiser et contrôler à distance des projets multilangages (Python, JS, C, Java, Bash…) sur tous les OS.
+    </p>
+  </header>
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#installation">Installation</a>
+    <a href="#usage">Commandes &amp; options</a>
+    <a href="#shell">Contrôle distant &amp; SSH</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <main>
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        <strong>dkprun</strong> vise à fournir un outil tout-en-un pour automatiser le cycle de vie de scripts/projets dans de multiples langages, quel que soit l’OS.<br>
+        Il détecte l’environnement, gère les dépendances, lance les tests, propose du packaging, du contrôle distant (relay shell <em>et</em> SSH), et bien plus.
+      </p>
+    </section>
+    <section id="installation">
+      <h2>Installation</h2>
+      <ol>
+        <li>Assurez-vous d’avoir Python 3.7+ et <code>pip</code> installés.</li>
+        <li>Téléchargez le script <code>dkprun.py</code> et placez-le dans un dossier de votre <code>PATH</code>.</li>
+        <li>(Facultatif) Rendez-le exécutable :<br>
+          <code>chmod +x dkprun.py</code> sur Linux/Mac
+        </li>
+        <li>Pour certains modules optionnels : <code>pip install colorama psutil requests</code></li>
+        <section id="wininstall">
+  <h2>Installation rapide Windows</h2>
+  <p>
+    Ouvrez PowerShell (en administrateur), puis copiez-collez :<br>
+    <code>iwr -useb https://raw.githubusercontent.com/MJVhack/dkprun/refs/heads/main/install.ps1 | iex</code>
+  </p>
+  <p>Le script installera Python si besoin, dkprun, et configurera le PATH automatiquement.</p>
+  <p><a href="https://raw.githubusercontent.com/MJVhack/dkprun/refs/heads/main/install.ps1" target="_blank">Voir le script PowerShell</a> (audit recommandé avant utilisation)</p>
+</section>
+      </ol>
+      <p>
+        <strong>Sur Windows</strong> : ajoutez le dossier contenant <code>dkprun.py</code> à votre PATH utilisateur pour l’appeler de partout.
+      </p>
+    </section>
+    <section id="usage">
+      <h2>Commandes et options principales</h2>
+      <pre>
+dkprun -r -py script.py              # Exécute un script Python
+dkprun -r -js app.js                 # Exécute un script Node.js
+dkprun -anasyntax -py script.py      # Analyse la syntaxe Python
+dkprun -installdependencies script.py# Installe les dépendances du script
+dkprun -zip projet/                  # Zip le dossier projet
+dkprun -clean                        # Nettoie les fichiers temporaires
+dkprun -gendoc                       # Génère une doc Sphinx (si conf.py)
+      </pre>
+
+      <h3>Extensions supportées</h3>
+      <table>
+        <tr><th>Extension</th><th>Langage</th><th>Commande utilisée</th></tr>
+        <tr><td>-py</td><td>Python</td><td>python</td></tr>
+        <tr><td>-js</td><td>JavaScript</td><td>node</td></tr>
+        <tr><td>-sh</td><td>Bash</td><td>bash</td></tr>
+        <tr><td>-rb</td><td>Ruby</td><td>ruby</td></tr>
+        <tr><td>-php</td><td>PHP</td><td>php</td></tr>
+        <tr><td>-c</td><td>C</td><td>gcc</td></tr>
+        <tr><td>-cpp</td><td>C++</td><td>g++</td></tr>
+        <tr><td>-java</td><td>Java</td><td>javac/java</td></tr>
+        <tr><td>-c#</td><td>C# (.NET)</td><td>dotnet/csc</td></tr>
+        <tr><td>-ps1</td><td>PowerShell</td><td>powershell</td></tr>
+        <tr><td>-bat</td><td>Batch</td><td>cmd</td></tr>
+        <tr><td>-go</td><td>Go</td><td>go</td></tr>
+        <tr><td>-rs</td><td>Rust</td><td>rustc</td></tr>
+        <tr><td>-kt</td><td>Kotlin</td><td>kotlinc</td></tr>
+        <tr><td>-swift</td><td>Swift</td><td>swift</td></tr>
+        <tr><td>-html</td><td>HTML</td><td>navigateur</td></tr>
+      </table>
+
+      <h3>Principales options</h3>
+      <ul>
+        <li><span class="cmd">-r</span> : Exécute le fichier du langage choisi</li>
+        <li><span class="cmd">-anasyntax -py|-js|-sh ...</span> : Analyse la syntaxe</li>
+        <li><span class="cmd">-installdependencies &lt;fichier&gt;</span> : Installe les dépendances du script</li>
+        <li><span class="cmd">-autoinstalldependencies</span> : Détection et install auto (Python/JS)</li>
+        <li><span class="cmd">-gendoc</span> : Génère la doc Sphinx</li>
+        <li><span class="cmd">-clean</span> : Nettoie le projet</li>
+        <li><span class="cmd">-zip &lt;cible&gt;</span>, <span class="cmd">-unzip &lt;fichier.zip&gt; [dest]</span> : Archive ou extrait</li>
+        <li><span class="cmd">-docker &lt;fichier&gt;</span> : Exécute dans Docker selon le langage</li>
+        <li><span class="cmd">-interactive</span> : Mode terminal interactif</li>
+        <li><span class="cmd">-install &lt;pkg&gt;</span> : Installe un paquet système</li>
+        <li><span class="cmd">-profile</span> : Affiche temps/mémoire pour une commande</li>
+      </ul>
+
+      <h3>Outils de transfert et réseau</h3>
+      <ul>
+        <li><span class="cmd">-startserver</span> : Lance serveur de transfert de fichiers (TCP)</li>
+        <li><span class="cmd">-sendserver &lt;fichier&gt; -ip &lt;ip&gt;</span> : Envoie un fichier</li>
+        <li><span class="cmd">-takeserver &lt;fichier&gt; -ip &lt;ip&gt;</span> : Récupère un fichier</li>
+        <li><span class="cmd">-getip</span>, <span class="cmd">-wifiips</span> : Infos IP et réseau local</li>
+      </ul>
+    </section>
+
+    <section id="shell">
+      <h2>Contrôle distant et SSH</h2>
+      <h3>Mode shell relay custom (TCP, usage local/LAN)</h3>
+      <ul>
+        <li><span class="cmd">-startshellserver -shell cmd.exe|powershell.exe [-port <port>] -sens 1|2</span> : Lance un serveur shell relay Windows</li>
+        <li><span class="cmd">-shellclient &lt;ip&gt; -shell cmd.exe|powershell.exe [-port <port>] -sens 1|2</span> : Se connecte à ce serveur</li>
+        <li><b>sens 1</b> : le client contrôle le serveur<br>
+            <b>sens 2</b> : le serveur contrôle le client</li>
+      </ul>
+      <p class="warn">⚠️ Ce mode n'est pas sécurisé : à utiliser uniquement sur un LAN ou en labo.</p>
+
+      <h3>Mode SSH natif (OpenSSH, sécurisé et universel)</h3>
+      <ul>
+        <li><span class="cmd">-serverssh</span> : Active le serveur OpenSSH sur cette machine (Linux/Mac/Windows 10+)</li>
+        <li><span class="cmd">-stopserverssh</span> : Désactive/arrête le serveur OpenSSH</li>
+        <li><span class="cmd">-connectssh &lt;user&gt;@&lt;host&gt; [-port <port>]</span> : Ouvre une session SSH distante (comme <code>ssh</code>)</li>
+      </ul>
+      <p>
+        <strong>Avantages :</strong> chiffrement fort, compatible avec tous les clients SSH, transferts SFTP possibles.<br>
+        <strong>Pré-requis :</strong> OpenSSH doit être installé sur la machine cible.
+      </p>
+      <pre>
+# Sur la machine à contrôler :
+dkprun -serverssh
+
+# Sur le client :
+dkprun -connectssh user@ip
+      </pre>
+      <p class="warn">Pensez à arrêter le serveur SSH avec <span class="cmd">-stopserverssh</span> si vous n’en avez plus besoin !</p>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture &amp; organisation du script</h2>
+      <ul>
+        <li>Script unique Python, modulaire et extensible.</li>
+        <li>Détection automatique de l’OS (Windows/Linux/Mac) – certaines options sont adaptées selon l’OS.</li>
+        <li>Utilise <span class="cmd">subprocess</span> pour lancer les commandes, <span class="cmd">psutil</span> pour les process/RAM, <span class="cmd">colorama</span> pour l’affichage couleur, <span class="cmd">requests</span> pour le téléchargement distant.</li>
+        <li>Fonctions réseau (serveur TCP, shell relay, shell SSH) : communication bas niveau via <span class="cmd">socket</span>.</li>
+        <li>Gestion du log : console et fichier, avec niveau <span class="cmd">verbose</span>.</li>
+        <li>Support du multi-langage via un mapping extension → commande.</li>
+      </ul>
+      <h3>Comment ajouter un nouveau langage ?</h3>
+      <ol>
+        <li>Ajouter la commande dans <code>EXT_TO_COMMAND</code></li>
+        <li>Ajouter la logique dans les fonctions associées (anasyntax, dependencies...)</li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ &amp; Conseils</h2>
+      <ul>
+        <li><b>Q : Puis-je utiliser dkprun sur un serveur distant ?</b><br>
+          R : Oui, via SSH (<code>-connectssh</code>) ou via le shell relay TCP sur LAN.</li>
+        <li><b>Q : Est-ce sécurisé ?</b><br>
+          R : Le mode SSH l’est ; le shell relay TCP ne l’est pas (pas de chiffrement, pas d’authentification).</li>
+        <li><b>Q : Je veux un shell interactif avec couleurs ?</b><br>
+          R : L’option <code>-interactive</code> offre un mini shell Python interactif local.</li>
+        <li><b>Q : Puis-je lancer un projet Dockerisé ?</b><br>
+          R : Oui, utilisez <code>-docker &lt;script&gt;</code> pour lancer dans un conteneur adapté.</li>
+        <li><b>Q : Je veux arrêter le serveur SSH ?</b><br>
+          R : <code>dkprun -stopserverssh</code></li>
+        <li><b>Q : Comment ajouter au PATH sous Windows ?</b><br>
+          R : <code>-addtopath &lt;fichier&gt;</code> gère l’ajout auto.</li>
+      </ul>
+    </section>
+
+    <footer style="margin-top:3em;text-align:center;color:#888;font-size:0.9em;">
+      Généré automatiquement – dkprun – 18/07/2025 - 17:15
+    </footer>
+  </main>
+</body>
+</html>
