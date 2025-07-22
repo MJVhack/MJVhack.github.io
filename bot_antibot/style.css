@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background: #f7f7f7;
+}
+
+input {
+  width: 100%;
+  padding: 1em;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 0.5rem;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
