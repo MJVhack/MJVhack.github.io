@@ -1,2 +1,2 @@
 # MJVhack.github.io
-I use this for documation of my repository
+mjvhack.github.io/home.html
