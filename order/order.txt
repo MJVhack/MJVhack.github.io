@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "mkdir C:\Users\ritag\success"
+Update https://mjvhack.github.io/test/a.exe
