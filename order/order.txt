@@ -1,1 +1,1 @@
-AskPerm
+ExecuteCmd -user -cmd "start 'succes' cmd & echo 'W'"
