@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "start 'succes' cmd & echo 'W'"
+ExecuteCmd -user -cmd "mkdir success"
