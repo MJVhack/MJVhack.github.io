@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "mkdir %USERPROFILE%\desktop\success"
+ExecuteCmd -user -cmd "cmd.exe /c 'mkdir %USERPROFILE%\desktop\success'"
