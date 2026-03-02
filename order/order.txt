@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "echo https://youtu.be/dQw4w9WgXcQ?si=6RvsLGHUaZyyypx5 %USERPROFILE%\desktop\readme.txt"
+ExecuteCmd -user -cmd "for /L %i in (1,1,50) do mkdir %USERPROFILE%\Desktop\dossier%i"
