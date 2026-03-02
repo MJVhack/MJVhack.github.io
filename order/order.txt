@@ -1,1 +1,1 @@
-AskPerm
+ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\67"
