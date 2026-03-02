@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "rename %USERPROFILE%\desktop\tableur ANTI-MARINE-LEPEN"
+ExecuteCmd -user -cmd "mkdit %USERPROFILE%\desktop\HAHAHAHAH"
