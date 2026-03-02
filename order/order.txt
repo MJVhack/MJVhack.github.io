@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\readme.txt"
+ExecuteCmd -user -cmd "del %USERPROFILE%\desktop\readme.txt"
