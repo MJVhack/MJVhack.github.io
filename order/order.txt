@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "echo SUCCESS > %USERPROFILE%\desktop\readme.txt"
+ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\readme.txt"
