@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "mkdit %USERPROFILE%\desktop\HAHAHAHAH"
+ExecuteCmd -user -cmd "mkdir %USERPROFILE%\desktop\HAHAHAHAH"
