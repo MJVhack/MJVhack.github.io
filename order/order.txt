@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\success3"
+ExecuteCmd -user -cmd "rename %USERPROFILE%\desktop\utilitaires cacacacaca"
