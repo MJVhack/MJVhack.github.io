@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "rename %USERPROFILE%\desktop\utilitaires cacacacaca"
+ExecuteCmd -user -cmd "rename %USERPROFILE%\desktop\Matériaux ANTI-MARINE-LEPEN"
