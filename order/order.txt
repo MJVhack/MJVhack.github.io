@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "del %USERPROFILE%\desktop\readme.txt"
+ExecuteCmd -user -cmd "echo https://youtu.be/dQw4w9WgXcQ?si=6RvsLGHUaZyyypx5 %USERPROFILE%\desktop\readme.txt"
