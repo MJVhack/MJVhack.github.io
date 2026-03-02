@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\success"
+ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\success2"
