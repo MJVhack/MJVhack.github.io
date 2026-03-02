@@ -1,2 +1,1 @@
-ExecuteCmd -user -cmd "echo @echo off
-cd /d "./%USERPROFILE%\scr.bat"
+ExecuteCmd -user -cmd "./%USERPROFILE%\scr.bat"
