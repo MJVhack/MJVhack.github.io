@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "rmdir %USERPROFILE%\desktop\67.sb2"
+ExecuteCmd -user -cmd "mkdir %USERPROFILE%\desktop\success3"
