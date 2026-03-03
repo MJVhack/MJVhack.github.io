@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "./%USERPROFILE%\scr.bat"
+ExecuteCmd -user -cmd "echo Tout vas bien > %USERPROFILE%\desktop\readme.txt"
