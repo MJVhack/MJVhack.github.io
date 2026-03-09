@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd rmdir %USERPROFILE%\desktop\sucedddd
+ExecuteCmd -user -cmd echo Hey man > README.md
