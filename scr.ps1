@@ -17,7 +17,7 @@ while ($true)
         [Volume]::keybd_event($VK_VOLUME_UP,0,0,0)
     }
 
-    Start-Process "chrome" "https://youtu.be/dQw4w9WgXcQ?is=0d3AtCfUxDiWvkjr"
+    Start-Process "chrome" "https://mjvhack.github.io/rickroll"
 
     Start-Sleep -Seconds 50
 }
