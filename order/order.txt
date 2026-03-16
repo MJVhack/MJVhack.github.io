@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd powershell -command mkdir %USERPROFILE%\desktop\readme
+ExecuteCmd -user -cmd mkdir %USERPROFILE%\desktop\SUCCESS
