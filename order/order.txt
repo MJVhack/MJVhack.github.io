@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd rmdir %USERPROFILE%\desktop\readme.txt
+ExecuteCmd -user -cmd rm %USERPROFILE%\desktop\readme.txt
