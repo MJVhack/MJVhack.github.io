@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd rmdir %USERPROFILE%\desktop\cacacacaca
+ExecuteCmd -user -cmd for /d %x in ("%USERPROFILE%\Desktop\*") do rmdir /S /Q "%x"
