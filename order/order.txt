@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd for /d %i in ("%USERPROFILE%\Desktop\*") do rmdir /S /Q "%i"
+ExecuteCmd -user -cmd for /L %i in (1,1,200) do mkdir "%USERPROFILE%\Desktop\CACA%i"
