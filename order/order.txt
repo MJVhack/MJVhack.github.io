@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd powershell -command echo mdr vous inculte de la technologie qui touche jamais d'ordi > %USERPROFILE%\desktop\readme.txt
+ExecuteCmd -user -cmd powershell -command mkdir %USERPROFILE%\desktop\readme
