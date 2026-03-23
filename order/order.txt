@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd for /L %i in (1,1,80) do mkdir "%USERPROFILE%\Desktop\ZAIMEPAS%i"
+ExecuteCmd -user -cmd for /L %i in (1,1,80) do rmdir "%USERPROFILE%\Desktop\ZAIMEPAS%i"
