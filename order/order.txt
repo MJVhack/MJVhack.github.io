@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd for /l %i in (1,1,500) do rmdir "%USERPROFILE%\Desktop\LINUX_MEILLEUR_QUE_WINDAUBE_%i"
+ExecuteCmd -user -cmd mkdir "%USERPROFILE%\Pictures" 2>nul && powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://i.imgur.com/YgnZJ83.jpeg', \"$env:USERPROFILE\Pictures\wallpaper.jpg\")" && reg add "HKCU\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "%USERPROFILE%\Pictures\wallpaper.jpg" /f && RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
