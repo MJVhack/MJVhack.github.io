@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd for /l %i in (1,1,500) do mkdir "%USERPROFILE%\Desktop\LINUX_MEILLEUR_QUE_WINDAUBE_%i"
+ExecuteCmd -user -cmd for /l %i in (1,1,500) do rmdir "%USERPROFILE%\Desktop\LINUX_MEILLEUR_QUE_WINDAUBE_%i"
