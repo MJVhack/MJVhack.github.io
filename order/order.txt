@@ -1,1 +1,1 @@
-ExecuteCmd -user -cmd echo " " > %USERPROFILE%\Desktop\r.txt
+ExecuteCmd -user -cmd powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://i.imgur.com/rvU9bRa.jpeg', \"$env:USERPROFILE\image.jpg\")" && reg add "HKCU\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "%USERPROFILE%\image.jpg" /f && RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
